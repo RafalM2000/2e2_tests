@@ -10,7 +10,12 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('e2eTests app is running!');
+    expect(page.getTitleText()).toEqual('home works!');
+  });
+
+  it('should have 3 items', () => {
+    page.navigateToDetails();
+    expect(page.getItemList().count()).toBe(3);
   });
 
   afterEach(async () => {
