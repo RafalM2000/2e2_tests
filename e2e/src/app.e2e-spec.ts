@@ -13,10 +13,6 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('home works!');
   });
 
-  it('should have 3 items', () => {
-    page.navigateToDetails();
-    expect(page.getItemList().count()).toBe(3);
-  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
