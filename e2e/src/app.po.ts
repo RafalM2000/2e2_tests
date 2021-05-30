@@ -9,5 +9,5 @@ export class AppPage {
   getTitleText(): Promise<unknown> {
     return element(by.css('app-home p')).getText() as Promise<unknown>;
   }
-  
+
 }
