@@ -1,1 +1,7 @@
-<p>contact works!</p>
+<div>
+    <button 
+    mat-stroked-button
+    color="primary"
+    (click) = "onetLinkVisible = !onetLinkVisible">Pokaż/Ukryj link do Onet'u</button>
+</div>
+<a *ngIf = "onetLinkVisible" href="https://www.onet.pl/">Link do Onet</a>
