@@ -23,6 +23,16 @@ describe('workspace-project App', () => {
     expect(page.getItemListText()).toEqual(['Konstanty', 'Anna', 'Kitty']);
   });
 
+  it('should on contact page display Repo Rafała', () => {
+    page.navigateToContact();
+    expect(page.getRepoText()).toEqual('Repo Rafała');
+  });
+
+  it('should on page contact, after click not display link to repo', () => {
+    page.navigateToContact();
+    page.getButton().click();
+    expect(page.getLink().isPresent()).toBe(false);
+  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
