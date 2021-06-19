@@ -6,3 +6,24 @@
     (click) = "onetLinkVisible = !onetLinkVisible">Pokaż/Ukryj link do repozytorium</button>
 </div>
 <a id ="link" *ngIf = "onetLinkVisible" href="https://github.com/RafalM2000?tab=repositories">Repo Rafała</a>
+
+<form [formGroup] = "myFormModel" (ngSubmit) = "onSubmit()">
+    <div>
+        <mat-form-field class="full-width">
+            <mat-label>Imię</mat-label>
+            <input 
+            type="text" 
+            matInput
+            formControlName = "yourName"            >
+        </mat-form-field>
+    </div>
+    <div>
+        <button 
+        type="submit"
+        color="primary"
+        mat-stroked-button>        
+        Wyślij</button>
+    </div>
+  </form>
+
+  <div class = "welcome" style = "font-size: 25px;">Hello: {{name}}</div>

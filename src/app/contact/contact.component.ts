@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -6,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  myFormModel: FormGroup
+  name: string;
 
   onetLinkVisible = true;
-  constructor() { }
+  constructor() { 
+    this.myFormModel = new FormGroup({
+      yourName: new FormControl('')
+    })
+  }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    this.name = this.myFormModel.value.yourName;
+  }
 }
