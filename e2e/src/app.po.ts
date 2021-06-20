@@ -1,6 +1,9 @@
-import { browser, by, element, ElementArrayFinder, ElementFinder } from 'protractor';
+import { $, browser, by, element, ElementArrayFinder, ElementFinder } from 'protractor';
 
 export class AppPage {
+
+  inputControl = $('input[formcontrolname="yourName"]');
+  welcomeMessage = $('.welcome');
 
   navigateTo(): Promise<unknown> {
     return browser.get(browser.baseUrl) as Promise<unknown>;
@@ -36,6 +39,18 @@ export class AppPage {
 
   getLink(): ElementFinder {
     return element(by.css('app-contact a')) as ElementFinder;
+  }
+
+  getInputControl(): ElementFinder {
+    return this.inputControl as ElementFinder
+  }
+
+  getSubmitButton(): ElementFinder {
+    return element(by.buttonText('Wyślij')) as ElementFinder;
+  }
+
+  getMessageWelcome(): Promise<unknown> {
+    return this.welcomeMessage.getText() as Promise<unknown>
   }
 
 }
