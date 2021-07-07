@@ -42,7 +42,7 @@ export class AppPage {
   }
 
   getInputControl(): ElementFinder {
-    return this.inputControl as ElementFinder
+    return this.inputControl as ElementFinder;
   }
 
   getSubmitButton(): ElementFinder {
@@ -50,7 +50,14 @@ export class AppPage {
   }
 
   getMessageWelcome(): Promise<unknown> {
-    return this.welcomeMessage.getText() as Promise<unknown>
+    return this.welcomeMessage.getText() as Promise<unknown>;
   }
 
+  getContactMenu(): ElementFinder {
+    return element(by.linkText('Kontakt')) as ElementFinder;
+  }
+
+  checkURL(): Promise<unknown> {
+    return browser.getCurrentUrl() as Promise<unknown>;
+  }
 }

@@ -39,7 +39,13 @@ describe('workspace-project App', () => {
     page.getInputControl().sendKeys('Rafał');
     page.getSubmitButton().click();
     expect(page.getMessageWelcome()).toEqual('Hello: Rafał');
-  })
+  });
+
+  it('url shoud contains /contact', () => {
+    page.navigateTo();
+    page.getContactMenu().click();
+    expect(page.checkURL()).toContain('/contact');
+  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
